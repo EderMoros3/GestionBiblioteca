@@ -72,6 +72,32 @@ public class BibliotecaApp {
         System.out.println(libro != null ? libro : "No se encontro el libro"); // Si es true muestra el libro, sino el mensaje
     }
 
+    private static void buscarLibroAutor() {
+        ArrayList<Libro> libros = gestor.cargarLibros();
 
+        System.out.println("Autor a buscar: ");
+        String autor = sc.nextLine().trim();
+
+        ArrayList<Libro> resultado = gestor.buscarPorAutor(libros, autor);
+        if (resultado.isEmpty()) {
+            System.out.println("No se encontraron libros.");
+        } else {
+            for (Libro libro : resultado) {
+                System.out.println(libro);
+            }
+        }
+    }
+
+    private static void mostrarTodosLibros() {
+        ArrayList<Libro> libros = gestor.cargarLibros();
+
+        if (libros.isEmpty()) {
+            System.out.println("No hay libros registrados");
+        } else {
+            for (Libro libro : libros) {
+                System.out.println(libro);
+            }
+        }
+    }
 
 }
