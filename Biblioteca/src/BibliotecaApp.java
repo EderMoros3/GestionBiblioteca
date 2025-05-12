@@ -62,7 +62,15 @@ public class BibliotecaApp {
         }
     }
 
-    
+    private static void buscarLibroISBN() {
+        ArrayList<Libro> libros = gestor.cargarLibros();
+
+        System.out.println("ISBN a buscar: ");
+        String isbn = sc.nextLine().trim();
+
+        Libro libro = gestor.buscarPorISBN(libros, isbn);
+        System.out.println(libro != null ? libro : "No se encontro el libro"); // Si es true muestra el libro, sino el mensaje
+    }
 
 
 
