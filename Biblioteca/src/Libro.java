@@ -29,7 +29,11 @@ public class Libro {
 
     @Override
     public String toString() {
-        return  titulo +  autor + ISBN + fechaPublicacion;
+        return  titulo + " - " + autor + " - " + ISBN + " - " + fechaPublicacion;
+    }
+
+    public String toFileString() {
+        return titulo + ";" + autor + ";" + ISBN + ";" + fechaPublicacion;
     }
 
     

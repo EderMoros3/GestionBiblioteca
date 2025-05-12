@@ -1,0 +1,2 @@
+Pedro picapiedra;Juan Lopez;patataISBN;1999
+Juan Toscano;Jose Luis el de los Palotes;perico;2024
