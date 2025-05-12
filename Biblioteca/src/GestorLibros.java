@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class GestorLibros {
-    private static final String RUTA = "libros.txt";
+    private static final String RUTA = "Biblioteca\\src\\libros.txt";
 
     public ArrayList<Libro> cargarLibros() {
         ArrayList<Libro> libros = new ArrayList<>();
@@ -44,7 +44,7 @@ public class GestorLibros {
 
     public ArrayList<Libro> buscarPorAutor(ArrayList<Libro> libros, String autor) {
         ArrayList<Libro> resultado = new ArrayList<>();
-        for (Libro libro : resultado) {
+        for (Libro libro : libros) {
             if (libro.getAutor().toLowerCase().contains(autor.toLowerCase())) {
                 resultado.add(libro);
             }
@@ -54,7 +54,7 @@ public class GestorLibros {
 
     public ArrayList<Libro> buscarPorTitulo(ArrayList<Libro> libros, String titulo) {
         ArrayList<Libro> resultado = new ArrayList<>();
-        for (Libro libro : resultado) {
+        for (Libro libro : libros) {
             if (libro.getTitulo().toLowerCase().contains(titulo.toLowerCase())) {
                 resultado.add(libro);
             }
