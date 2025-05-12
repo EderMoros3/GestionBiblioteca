@@ -29,4 +29,41 @@ public class BibliotecaApp {
             }
         } while (opcion != 6);
     }
+
+    private static void añadirLibro() {
+        ArrayList<Libro> libros = gestor.cargarLibros();
+
+        System.out.println("Titulo: ");
+        String titulo = sc.nextLine().trim();
+        System.out.println("Autor: ");
+        String autor = sc.nextLine().trim();
+        System.out.println("ISBN: ");
+        String isbn = sc.nextLine().trim();
+        System.out.println("Año de publicacion: ");
+        String yearStr = sc.nextLine().trim();
+
+        if (titulo.isEmpty() || autor.isEmpty() || isbn.isEmpty() || yearStr.isEmpty()) {
+            System.out.println("Error: Todos los campos son obligatorios");
+            return;
+        }
+
+        if (gestor.existeISBN(libros, isbn)) {
+            System.out.println("Error: ISBN duplicado");
+            return;
+        }
+
+        try {
+            int year = Integer.parseInt(yearStr);
+            Libro nuevoLibro = new Libro(titulo, autor, isbn, year);
+            gestor.guardarLibro(nuevoLibro);
+            System.out.println("Libro añadido con exito");
+        } catch (NumberFormatException e) {
+            System.err.println("Error: Año debe de ser numerico");
+        }
+    }
+
+    
+
+
+
 }
