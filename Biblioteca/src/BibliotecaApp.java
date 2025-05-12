@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -81,6 +82,22 @@ public class BibliotecaApp {
         ArrayList<Libro> resultado = gestor.buscarPorAutor(libros, autor);
         if (resultado.isEmpty()) {
             System.out.println("No se encontraron libros.");
+        } else {
+            for (Libro libro : resultado) {
+                System.out.println(libro);
+            }
+        }
+    }
+
+    public static void buscarLibroTitulo() {
+        ArrayList<Libro> libros = gestor.cargarLibros();
+
+        System.out.println("Autor a buscar: ");
+        String titulo = sc.nextLine().trim();
+
+        ArrayList<Libro> resultado = gestor.buscarPorTitulo(libros, titulo);
+        if (resultado.isEmpty()) {
+            System.out.println("No se encontraron libros");
         } else {
             for (Libro libro : resultado) {
                 System.out.println(libro);

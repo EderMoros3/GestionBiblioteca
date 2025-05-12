@@ -42,5 +42,34 @@ public class GestorLibros {
         return false;
     }
 
-    
-}
+    public ArrayList<Libro> buscarPorAutor(ArrayList<Libro> libros, String autor) {
+        ArrayList<Libro> resultado = new ArrayList<>();
+        for (Libro libro : resultado) {
+            if (libro.getAutor().toLowerCase().contains(autor.toLowerCase())) {
+                resultado.add(libro);
+            }
+        }
+        return resultado;
+    }
+
+    public ArrayList<Libro> buscarPorTitulo(ArrayList<Libro> libros, String titulo) {
+        ArrayList<Libro> resultado = new ArrayList<>();
+        for (Libro libro : resultado) {
+            if (libro.getTitulo().toLowerCase().contains(titulo.toLowerCase())) {
+                resultado.add(libro);
+            }
+        }
+        return resultado;
+    }
+
+    public Libro buscarPorISBN(ArrayList<Libro> libros, String isbn) {
+        for (Libro libro : libros) {
+            if (libro.getISBN().equals(isbn)) {
+                return libro;
+            }
+        }
+        return null;
+    }
+    }
+
+
